@@ -2,6 +2,6 @@
 function admin_controller() {
 
     include '../models/ContactMessage.php';
-    getAll();
+     $messages = ContactMessage::getAll_formdata();
     include '../view/admin.view.php';
 }

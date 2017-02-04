@@ -4,11 +4,11 @@
         <th>Email</th>
         <th>Message</th>
     </tr>
-    <?php foreach($fields as  $fields) : ?>
+    <?php foreach($messages as $message) : ?>
         <tr>
-            <td><?php echo $fields['name']; ?></td>
-            <td><?php echo $fields['email']; ?></td>
-            <td><?php echo $$fields['message']; ?></td>
+            <td><?php echo $message->$_POST['name']; ?></td>
+            <td><?php echo $message->$_POST['email']; ?></td>
+            <td><?php echo $message>$_POST['message']; ?></td>
         </tr>
     <?php endforeach; ?>
 </table>

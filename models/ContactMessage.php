@@ -1,6 +1,8 @@
 <?php
 
-function save() {
+class ContactMessage {
+
+ static function save_formdata() {
 
 if ($msgs[$status] == 0){
 $ContactMessage = '../database/Contact_message.txt';
@@ -11,20 +13,21 @@ $ContactMessage = '../database/Contact_message.txt';
     );
     $formdata= json_encode($formdata);
        $formdata .= "\n";
-       $fopean = fopen('../database/Contact_message.txt');
-       fputs($fopean);
-       fclose($fopean);
+       $fopen = fopen('../database/Contact_message.txt','r');
+       fputs($fopen);
+       fclose($fopen);
   }
 }
- function create($formdata){
+  static function create_formdata($formdata){
      if (!is_array($formdata)) {
             $formdata = json_decode($formdata, true);
         }
  }
 
- function getAll(){
-     $fopean = fopen('../database/Contact_message.txt');
-     $fopean_read = fread($fopen,filesize($fopen));
-     fclose($fopean);
-     print $fopen;
+  static function getAll_formdata(){
+     $fopen = fopen('../database/Contact_message.txt','r');
+     $fopen_read = fread( $fopen, filesize( $fopen ) );
+     fclose($fopen);
+     print $fopen_read;
+    }
  }

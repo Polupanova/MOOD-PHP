@@ -26,6 +26,7 @@ function validation($fields = array()) {
 	$email_validate = filter_var($fields['email'], FILTER_VALIDATE_EMAIL);
 	if(form_check_length($fields['name'], 2, 25) && form_check_length($fields['email'], 2, 1000) && $email_validate) {
         return 0;
+        save_formdata();
 	} else {
         return 2;
     }

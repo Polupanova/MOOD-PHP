@@ -8,7 +8,7 @@ function home_controller(){
     $name = $email = $message = $msg = $isError= '';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        include'../app/check.php';
+        include'../function/FormValidation.php';
         $status = validation($_POST);
         $msgs = array(
             "&#9745; Thanks for your message!",
@@ -21,8 +21,8 @@ function home_controller(){
     }
 
     //top navigation
-
-    $menu_lang = include '../lang/lv/menu.lang.php';
+    global $app;
+    $menu_lang = include '../lang/' . $app->getLocale() .'/menu.lang.php';
     $menu_cfg = include '../config/menu.config.php';
 
     include '../view/layouts/_html.view.php';

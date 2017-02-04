@@ -12,9 +12,11 @@
             </div>
 
             <div class="navigation-menu-language">
-                <a>LV</a>
-                <a>RUS</a>
-                <a>EN</aa>
+
+             <?php foreach($app->getSupportedLocales() as $locale) : ?>
+                  <a href="/?lang=<?= $locale; ?>"><?= $locale; ?></a>
+           <?php endforeach; ?>
+
             </div>
 
             <div class="navigation-menu">
