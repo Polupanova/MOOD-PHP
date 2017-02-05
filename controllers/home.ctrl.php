@@ -6,6 +6,7 @@ include'../function/html.lib.php';
 function home_controller(){
 
     $name = $email = $message = $msg = $isError= '';
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         include'../function/FormValidation.php';
