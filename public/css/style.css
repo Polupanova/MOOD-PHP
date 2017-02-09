@@ -166,6 +166,9 @@ input:focus, button:focus, textarea:focus {
 	padding: 29px 0;
 	margin-right: 20px;
 }
+.navigation-menu-language{
+    text-transform: uppercase;
+}
 .navigation-menu a,.navigation-menu-language  a{
    font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -612,7 +615,7 @@ textarea.form_field {
     height: 230px;
     overflow: auto;
 }
-.form_field.error{
+.error{
   border: 2px ridge #e35152 ;
   color:white;
   font-size:15px;

@@ -1,6 +1,6 @@
 <?php
 
  return [
-    'default_locale' => 'LV',
-    'supported_locales' => ['EN', 'RU'],
-];
+     'default_locale' => 'lv',
+     'supported_locales' => ['en','rus'],
+ ];

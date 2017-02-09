@@ -1,6 +1,7 @@
 <?php
 
-function run_controller(string $uri) {
+function run_controller(string $uri)
+{
     $routes = include '../config/router.config.php';
     if (isset($routes[$uri])) {
         include '../controllers/' . $routes[$uri] . '.ctrl.php';

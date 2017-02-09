@@ -7,15 +7,15 @@
                         <?php echo '<div class="box'.($isError ? '-error' : '-message').'">'.$msg.'</div>'; ?>
 
                         <div class="form-row">
-                            <input class="form_field" value="<?=$name?>" type="text" name="name" placeholder="Vārds Uzvārds" id="username">
+                            <input class="form_field<?=($name == '' && $isError) ? ' error' : '' ?>" value="<?=$name?>" type="text" name="name" placeholder="Vārds Uzvārds" id="username">
                         </div>
 
                         <div class="form-row">
-                            <input class="form_field" value="<?=$email?>" type="text" name="email" placeholder="E-pasts" id="email">
+                            <input class="form_field<?=($email == '' && $isError) ? ' error' : '' ?>" value="<?=$email?>" type="text" name="email" placeholder="E-pasts" id="email">
                         </div>
 
                         <div class="form-row">
-                            <textarea class="form_field" name="message" placeholder="Tavs jautājums" id="message"><?=$message?></textarea>
+                            <textarea class="form_field<?=($message == '' && $isError) ? ' error' : '' ?>" name="message" placeholder="Tavs jautājums" id="message"><?=$message?></textarea>
                         </div>
 
                         <div class="form-row">

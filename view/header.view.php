@@ -1,5 +1,5 @@
 
-+<?php global $app; ?>
+<?php global $app; ?>
 
 <header class="main-wrapper">
     <div class="navigation-container">
@@ -13,9 +13,9 @@
 
             <div class="navigation-menu-language">
 
-             <?php foreach($app->getSupportedLocales() as $locale) : ?>
-                  <a href="/?lang=<?= $locale; ?>"><?= $locale; ?></a>
-           <?php endforeach; ?>
+                <?php foreach($app->getSupportedLocales() as $locale) : ?>
+              <a href="/?lang=<?= $locale; ?>"><?= $locale; ?>
+               <?php endforeach; ?>
 
             </div>
 

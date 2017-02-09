@@ -1,8 +1,11 @@
 <?php
-class App {
+
+class App
+{
     public $loadedConfigs = [];
     public $currentLocale = '';
-    function getConfig($path) {
+    public function getConfig($path)
+    {
         $parts = explode('.', $path);
         if (!isset($this->loadedConfigs[$parts[0]])) {
             $file_path = '../config/'.$parts[0].'.config.php';
@@ -10,18 +13,18 @@ class App {
         }
         return $this->loadedConfigs[$parts[0]][$parts[1]];
     }
-    // get all languages
-    function getSupportedLocales() {
+    public function getSupportedLocales()
+    {
         $locales = $this->getConfig('app.supported_locales');
         $locales[] = $this->getConfig('app.default_locale');
         return $locales;
     }
-    // get default language
-    function getDefaultLocale() {
+    public function getDefaultLocale()
+    {
         return $this->getConfig('app.default_locale');
     }
-
-    function setLocale() {
+    public function setLocale()
+    {
         $locale = $this->getLocaleFromURL();
         if ($locale === false) {
             $user_locale = $this->getUserLocale();
@@ -34,29 +37,28 @@ class App {
             $this->currentLocale = $locale;
         }
     }
-    
-    function getLocale() {
+    public function getLocale()
+    {
         return $this->currentLocale;
     }
-    // get all languages
-    function isLocaleSupported($locale) {
+    public function isLocaleSupported($locale)
+    {
         return in_array($locale, $this->getSupportedLocales());
     }
-
-    function getUserLocale() {
+    public function getUserLocale()
+    {
         if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
             return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         }
         return false;
     }
-
-    function getLocaleFromURL() {
+    public function getLocaleFromURL()
+    {
         if (isset($_GET['lang'])) {
             $locale = $_GET['lang'];
             if (in_array($locale, $this->getSupportedLocales())) {
                 return $locale;
             }
-            // set default language
             return $this->getDefaultLocale();
         }
         return false;
