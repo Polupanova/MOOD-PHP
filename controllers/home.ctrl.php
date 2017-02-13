@@ -5,11 +5,12 @@ include'../function/html.lib.php';
 
 function home_controller()
 {
+    // define variables as strings
     $name = $email = $message = $msg = $isError= '';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        include'../function/FormValidation.lib.php';
-        
+        include'../function/form_validation.lib.php';
+
         $status = validation($_POST);
         $msgs = array(
             ' ☑ Thanks for your message!',

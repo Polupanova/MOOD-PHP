@@ -6,9 +6,9 @@
     </tr>
     <?php foreach($messages as $message) : ?>
         <tr>
-            <td><?php echo  $message->name; ?></td>
-            <td><?php echo  $message->email; ?></td>
-            <td><?php echo  $message->message; ?></td>
+            <td><?=htmlspecialchars($message->name);?></td>
+            <td><?=htmlspecialchars($message->email);?></td>
+            <td><?=htmlspecialchars($message->message);?></td>
         </tr>
     <?php endforeach; ?>
 </table>
